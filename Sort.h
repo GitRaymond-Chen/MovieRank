@@ -23,7 +23,7 @@ void merge(Movie array[], int const left, int const mid, int const right) {
 
     // Merge the temp arrays back into array[left..right]
     while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
-        if (leftArray[indexOfSubArrayOne].score > rightArray[indexOfSubArrayTwo].score) {
+        if (leftArray[indexOfSubArrayOne].rating > rightArray[indexOfSubArrayTwo].rating) {
             array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
             indexOfSubArrayOne++;
         }

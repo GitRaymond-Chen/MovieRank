@@ -3,32 +3,20 @@
 
 Movie::Movie() {
 	title = "";
-	director = "";
+	actor = "";
 	year = 0;
 	rating = 0.0;
-	popularity = 0;
-	score = 0.0;
 }
 
-Movie::Movie(string title, string director, int year, double rating, int popularity) {
+Movie::Movie(string title, string actor, int year, double rating){
 	this->title = title;
-	this->director = director;
+	this->actor = actor;
 	this->year = year;
 	this->rating = rating;
-	this->popularity = popularity;
-
-	score = rating;
-	if (popularity <= 100)
-		score++;
-	if (popularity <= 50)
-		score++;
-	if (popularity <= 10)
-		score++;
 }
 
 void Movie::Print() {
 	cout << title << " (" << year << ") " << endl;
-	cout << "Rating: " << rating << " | Poularity: " << popularity << endl;
-	cout << "Directed by: " << director << endl;
-	cout << "Score: " << score << endl;
+	cout << "Rating: " << rating << endl;
+	cout << "Actor: " << actor << endl;
 }
