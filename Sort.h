@@ -1,9 +1,10 @@
 #include "Movie.h"
+#include <vector>
 
 // Merges two subarrays of array[].
 // First subarray is arr[begin..mid]
 // Second subarray is arr[mid+1..end]
-void merge(Movie array[], int const left, int const mid, int const right) {
+void merge(vector<Movie>& array, int const left, int const mid, int const right) {
     int const subArrayOne = mid - left + 1;
     int const subArrayTwo = right - mid;
 
@@ -54,7 +55,7 @@ void merge(Movie array[], int const left, int const mid, int const right) {
 // begin is for left index and end is
 // right index of the sub-array
 // of arr to be sorted */
-void mergeSort(Movie array[], int const begin, int const end) {
+void mergeSort(vector<Movie>& array, int const begin, int const end) {
     if (begin >= end)
         return; // Returns recursively
 
@@ -75,7 +76,7 @@ void swap(Movie* a, Movie* b) {
 
 
 // function to rearrange array (find the partition point)
-int partition(Movie array[], int low, int high) {
+int partition(vector<Movie> &array, int low, int high) {
 
     // select the rightmost element as pivot
     double pivot = array[high].rating;
@@ -87,12 +88,7 @@ int partition(Movie array[], int low, int high) {
     // compare them with the pivot
     for (int j = low; j < high; j++) {
         if (array[j].rating > pivot) {
-
-            // if element smaller than pivot is found
-            // swap it with the greater element pointed by i
             i++;
-
-            // swap element at i with element at j
             swap(&array[i], &array[j]);
         }
     }
@@ -104,7 +100,7 @@ int partition(Movie array[], int low, int high) {
     return (i + 1);
 }
 
-void quickSort(Movie array[], int low, int high) {
+void quickSort(vector<Movie> &array, int low, int high) {
     if (low < high) {
 
         // find the pivot element such that
