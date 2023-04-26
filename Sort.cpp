@@ -43,15 +43,15 @@ int main()
 
     cout << "Given array is: ";
     for (int i = 0; i < 6; i++)
-        movies1[i].Print();
+        movies2[i].Print();
     
     cout << endl;
 
     // perform quicksort on data
     quickSort(movies2, 0, 6 - 1);
 
-    cout << "Sorted array in ascending order: \n";
+    cout << "Quick sorted array is: " << endl;
     for (int i = 0; i < 6; i++)
-        movies1[i].Print();
+        movies2[i].Print();
     cout << endl;
 }

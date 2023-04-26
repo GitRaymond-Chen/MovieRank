@@ -78,7 +78,7 @@ void swap(Movie* a, Movie* b) {
 int partition(Movie array[], int low, int high) {
 
     // select the rightmost element as pivot
-    int pivot = array[high].rating;
+    double pivot = array[high].rating;
 
     // pointer for greater element
     int i = (low - 1);
@@ -86,7 +86,7 @@ int partition(Movie array[], int low, int high) {
     // traverse each element of the array
     // compare them with the pivot
     for (int j = low; j < high; j++) {
-        if (array[j].rating <= pivot) {
+        if (array[j].rating > pivot) {
 
             // if element smaller than pivot is found
             // swap it with the greater element pointed by i
