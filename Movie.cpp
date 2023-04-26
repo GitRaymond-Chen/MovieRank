@@ -17,6 +17,6 @@ Movie::Movie(string title, string actor, int year, double rating){
 
 void Movie::Print() {
 	cout << title << " (" << year << ") " << endl;
-	cout << "Rating: " << rating << endl;
 	cout << "Actor: " << actor << endl;
+	cout << "Rating: " << rating << endl;
 }

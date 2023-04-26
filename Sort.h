@@ -64,58 +64,58 @@ void mergeSort(Movie array[], int const begin, int const end) {
     merge(array, begin, mid, end);
 }
 
-//#############################################################################################################
+// #############################################################################################################
 
-int partition(int* arr, int start, int end)
-{
-    // assuming last element as pivotElement
-    int index = 0, pivotElement = arr[end], pivotIndex;
-    int* temp = new int[end - start + 1]; // making an array whose size is equal to current partition range...
-    for (int i = start; i <= end; i++) // pushing all the elements in temp which are smaller than pivotElement
-    {
-        if (arr[i] < pivotElement)
-        {
-            temp[index] = arr[i];
-            index++;
-        }
-    }
-
-    temp[index] = pivotElement; // pushing pivotElement in temp
-    index++;
-
-    for (int i = start; i < end; i++) // pushing all the elements in temp which are greater than pivotElement
-    {
-        if (arr[i] > pivotElement)
-        {
-            temp[index] = arr[i];
-            index++;
-        }
-    }
-    // all the elements now in temp array are order :
-    // leftmost elements are lesser than pivotElement and rightmost elements are greater than pivotElement
-
-    index = 0;
-    for (int i = start; i <= end; i++) // copying all the elements to original array i.e arr
-    {
-        if (arr[i] == pivotElement)
-        {
-            // for getting pivot index in the original array.
-            // we need the pivotIndex value in the original and not in the temp array
-            pivotIndex = i;
-        }
-        arr[i] = temp[index];
-        index++;
-    }
-    return pivotIndex; // returning pivotIndex
+// function to swap elements
+void swap(Movie* a, Movie* b) {
+    Movie t = *a;
+    *a = *b;
+    *b = t;
 }
 
-void quickSort(int* arr, int start, int end)
-{
-    if (start < end)
-    {
-        int partitionIndex = partition(arr, start, end); // for getting partition
-        quickSort(arr, start, partitionIndex - 1); // sorting left side array
-        quickSort(arr, partitionIndex + 1, end); // sorting right side array
+
+// function to rearrange array (find the partition point)
+int partition(Movie array[], int low, int high) {
+
+    // select the rightmost element as pivot
+    int pivot = array[high].rating;
+
+    // pointer for greater element
+    int i = (low - 1);
+
+    // traverse each element of the array
+    // compare them with the pivot
+    for (int j = low; j < high; j++) {
+        if (array[j].rating <= pivot) {
+
+            // if element smaller than pivot is found
+            // swap it with the greater element pointed by i
+            i++;
+
+            // swap element at i with element at j
+            swap(&array[i], &array[j]);
+        }
     }
-    return;
+
+    // swap pivot with the greater element at i
+    swap(&array[i + 1], &array[high]);
+
+    // return the partition point
+    return (i + 1);
+}
+
+void quickSort(Movie array[], int low, int high) {
+    if (low < high) {
+
+        // find the pivot element such that
+        // elements smaller than pivot are on left of pivot
+        // elements greater than pivot are on righ of pivot
+        int pi = partition(array, low, high);
+
+        // recursive call on the left of pivot
+        quickSort(array, low, pi - 1);
+
+        // recursive call on the right of pivot
+        quickSort(array, pi + 1, high);
+    }
 }
