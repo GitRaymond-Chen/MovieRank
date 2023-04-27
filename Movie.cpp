@@ -3,13 +3,13 @@
 
 Movie::Movie() {
 	title = "";
-	year = 0;
-	rating = 0.0;
-	popularity = 0.0;
-	revenue = 0;
+	year = "";
+	rating = "";
+	popularity = "";
+	revenue = "";
 }
 
-Movie::Movie(string title, int year, double rating, double popularity, int revenue){
+Movie::Movie(string title, string year, string rating, string popularity, string revenue){
 	this->title = title;
 	this->year = year;
 	this->rating = rating;

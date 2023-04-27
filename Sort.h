@@ -24,7 +24,7 @@ void merge(vector<Movie>& array, int const left, int const mid, int const right)
 
     // Merge the temp arrays back into array[left..right]
     while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
-        if (leftArray[indexOfSubArrayOne].rating > rightArray[indexOfSubArrayTwo].rating) {
+        if (stod(leftArray[indexOfSubArrayOne].rating) > stod(rightArray[indexOfSubArrayTwo].rating)) {
             array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
             indexOfSubArrayOne++;
         }
@@ -79,7 +79,7 @@ void swap(Movie* a, Movie* b) {
 int partition(vector<Movie> &array, int low, int high) {
 
     // select the rightmost element as pivot
-    double pivot = array[high].rating;
+    double pivot = stod(array[high].rating);
 
     // pointer for greater element
     int i = (low - 1);
@@ -87,7 +87,7 @@ int partition(vector<Movie> &array, int low, int high) {
     // traverse each element of the array
     // compare them with the pivot
     for (int j = low; j < high; j++) {
-        if (array[j].rating > pivot) {
+        if (stod(array[j].rating) > pivot) {
             i++;
             swap(&array[i], &array[j]);
         }

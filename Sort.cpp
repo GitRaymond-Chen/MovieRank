@@ -10,11 +10,11 @@ int main()
 {
     // string title, int year, double rating, double popularity, int revenue
     vector<Movie> movies1;
-    movies1.push_back(Movie("Toy Story", 1995, 7.7, 21.946943, 373554033));
-    movies1.push_back(Movie("Jumanji", 1995, 6.9, 17.015539, 262797249));
-    movies1.push_back(Movie("Grumpier Old Men", 1995, 6.5, 11.7129, 0));
-    movies1.push_back(Movie("Waiting to Exhale", 1995, 6.1, 3.859495, 81452156));
-    movies1.push_back(Movie("Father of the Bride Part II", 1995, 5.7, 8.387519, 76578911));
+    movies1.push_back(Movie("Grumpier Old Men", "1995", "6.5", "11.7129", "0"));
+    movies1.push_back(Movie("Waiting to Exhale", "1995", "6.1", "3.859495", "81452156"));
+    movies1.push_back(Movie("Father of the Bride Part II", "1995", "5.7", "8.387519", "76578911"));
+    movies1.push_back(Movie("Toy Story", "1995", "7.7", "21.946943", "373554033"));
+    movies1.push_back(Movie("Jumanji", "1995", "6.9", "17.015539", "262797249"));
 
     cout << "Given array is: ";
     for (int i = 0; i < movies1.size(); i++)
@@ -36,11 +36,11 @@ int main()
     cout << "#####################################################################################################" << endl << endl;
 
     vector<Movie> movies2;
-    movies2.push_back(Movie("Toy Story", 1995, 7.7, 21.946943, 373554033));
-    movies2.push_back(Movie("Jumanji", 1995, 6.9, 17.015539, 262797249));
-    movies2.push_back(Movie("Grumpier Old Men", 1995, 6.5, 11.7129, 0));
-    movies2.push_back(Movie("Waiting to Exhale", 1995, 6.1, 3.859495, 81452156));
-    movies2.push_back(Movie("Father of the Bride Part II", 1995, 5.7, 8.387519, 76578911));
+    movies2.push_back(Movie("Grumpier Old Men", "1995", "6.5", "11.7129", "0"));
+    movies2.push_back(Movie("Waiting to Exhale", "1995", "6.1", "3.859495", "81452156"));
+    movies2.push_back(Movie("Father of the Bride Part II", "1995", "5.7", "8.387519", "76578911"));
+    movies2.push_back(Movie("Toy Story", "1995", "7.7", "21.946943", "373554033"));
+    movies2.push_back(Movie("Jumanji", "1995", "6.9", "17.015539", "262797249"));
 
     cout << "Given array is: ";
     for (int i = 0; i < movies1.size(); i++)
