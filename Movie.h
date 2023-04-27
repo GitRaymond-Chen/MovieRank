@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MOVIE_H
+#define MOVIE_H
 #include <string>
 #include <vector>
 using namespace std;
@@ -17,3 +18,4 @@ public:
 	string popularity;
 	string revenue;
 };
+#endif
