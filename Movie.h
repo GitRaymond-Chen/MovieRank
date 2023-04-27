@@ -7,13 +7,13 @@ class Movie {
 public:
 	// Constructor
 	Movie();
-	Movie(string title, string actor, vector<string> genre, int year, double rating);
+	Movie(string title, int year, double rating, double popularity, int revenue);
 
 	void Print();
 
 	string title;
-	string actor;
 	int year;
 	double rating;
-	vector<string> genre;
+	double popularity;
+	int revenue;
 };
