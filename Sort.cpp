@@ -2,6 +2,7 @@
 #include "Movie.h"
 #include "Sort.h"
 #include <vector>
+#include <chrono>
 using namespace std;
 
 // Driver code
@@ -23,7 +24,11 @@ int main()
 
     cout << endl;
 
+    auto begin = std::chrono::high_resolution_clock::now();
     mergeSort(movies1, 0, 6 - 1);
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
+    printf("Time measured: %.3f seconds.\n", elapsed.count() * 1e-9);
 
     cout << "Merge sorted array is: " << endl;
     for (int i = 0; i < 6; i++)
@@ -47,7 +52,12 @@ int main()
     cout << endl;
 
     // perform quicksort on data
+    begin = std::chrono::high_resolution_clock::now();
     quickSort(movies2, 0, 6 - 1);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
+    printf("Time measured: %.3f seconds.\n", elapsed.count() * 1e-9);
+
 
     cout << "Quick sorted array is: " << endl;
     for (int i = 0; i < 6; i++)
