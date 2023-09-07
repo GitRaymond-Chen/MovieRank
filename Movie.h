@@ -1,14 +1,22 @@
-#pragma once
+#ifndef MOVIE_H
+#define MOVIE_H
 #include <string>
+#include <vector>
 using namespace std;
 
-struct Movie
-{
+class Movie {
+public:
+	// Constructor
+	Movie();
+	Movie(string title, string year, string rating, string popularity, string revenue, string language);
+
+	string Print();
+
 	string title;
 	string year;
-	string popularity;
 	string rating;
+	string popularity;
 	string revenue;
 	string language;
-	Movie();
 };
+#endif
