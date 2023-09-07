@@ -35,8 +35,8 @@ namespace DSAFinalUI {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label1;
+
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button1;
@@ -56,35 +56,10 @@ namespace DSAFinalUI {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
-			// 
-			// textBox1
-			// 
-			this->textBox1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(142, 77);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(234, 27);
-			this->textBox1->TabIndex = 0;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Italic | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(141, 49);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(239, 25);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Enter Celebrity Name";
 			// 
 			// label2
 			// 
@@ -93,18 +68,18 @@ namespace DSAFinalUI {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Italic | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(189, 154);
+			this->label2->Location = System::Drawing::Point(200, 127);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(139, 25);
+			this->label2->Size = System::Drawing::Size(123, 25);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Enter Genre";
+			this->label2->Text = L"Enter Year";
 			// 
 			// textBox2
 			// 
 			this->textBox2->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(163, 182);
+			this->textBox2->Location = System::Drawing::Point(166, 155);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(183, 27);
 			this->textBox2->TabIndex = 2;
@@ -119,7 +94,7 @@ namespace DSAFinalUI {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
-			// inputForm
+			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -128,21 +103,21 @@ namespace DSAFinalUI {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
-			this->Text = L"IMDB Movie Matcher";
+			this->Text = L"Movies by Year";
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
-	// JACK
+	// Button is Clicked
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ name = textBox1->Text;
-		String^ genre = textBox2->Text;
+		// String is year
+		String^ year = textBox2->Text;
 
-		MyForm1^ form1 = gcnew MyForm1(name, genre);
+		// Open next form
+		MyForm1^ form1 = gcnew MyForm1(year);
 		form1->ShowDialog();
 	}
 };
