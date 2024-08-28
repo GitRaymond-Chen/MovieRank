@@ -2,8 +2,9 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
-void main(array<String^>^ args)
+void main()
 {
+    // Runs MyForm
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     DSAFinalUI::MyForm form;

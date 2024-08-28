@@ -1,6 +1,6 @@
-
 #include "Movie.h"
 #include <vector>
+
 // Merges two subarrays of array[].
 // First subarray is arr[begin..mid]
 // Second subarray is arr[mid+1..end]

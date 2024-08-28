@@ -11,6 +11,7 @@ Database::Database()
 	getline(inputFile, line);
 	int count = 0;
 
+	// Reads and parsees input from metadata
 	while (getline(inputFile, line))
 	{
 		Movie movieObject;
